@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core palette -- "field dispatch" identity */
+  --color-ink: #142138;       /* deep navy -- headers, primary text */
+  --color-paper: #f3f3ee;     /* cool off-white -- page background */
+  --color-signal: #e8963c;    /* safety amber -- primary CTA */
+  --color-signal-dark: #c97a28;
+  --color-verified: #4c7a5e;  /* verified green -- trust signals */
+  --color-alert: #c1443a;     /* urgent red -- reserved, sparing use */
+  --color-slate: #5b6472;     /* muted secondary text */
+  --color-line: #d8d6cc;      /* hairline borders on paper bg */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-signal: var(--color-signal);
+  --color-signal-dark: var(--color-signal-dark);
+  --color-verified: var(--color-verified);
+  --color-alert: var(--color-alert);
+  --color-slate: var(--color-slate);
+  --color-line: var(--color-line);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Ticket-stub signature element: perforation notch */
+.ticket-perforation {
+  position: relative;
+}
+
+.ticket-perforation::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--color-paper);
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+  .ticket-perforation::before {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

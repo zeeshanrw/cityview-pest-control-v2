@@ -1,69 +1,113 @@
-import Image from "next/image";
+import Link from "next/link";
+import { DispatchTicket } from "@/components/CTAButtons";
+import { BUSINESS, SERVICES } from "@/lib/constants";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-4 md:px-6 pt-12 md:pt-20 pb-16 md:pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-start">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-verified">
+              Serving the {BUSINESS.serviceArea}
+            </span>
+            <h1 className="font-display font-semibold uppercase text-4xl md:text-6xl leading-[0.95] tracking-tight mt-4 mb-6">
+              Pest problem?
+              <br />
+              We&apos;re on our way.
+            </h1>
+            <p className="text-slate text-lg leading-relaxed max-w-lg mb-8">
+              Fast, reliable extermination and wildlife removal — handled
+              directly by an experienced local operator, not a call centre.
+              Every job starts with a call or a WhatsApp message.
+            </p>
+
+            <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-sm text-slate">
+              <span>&#10003; Same-day response available</span>
+              <span>&#10003; All pests, all wildlife</span>
+              <span>&#10003; No fixed pricing surprises</span>
+            </div>
+          </div>
+
+          <DispatchTicket />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services — case file index */}
+      <section id="services" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-signal">
+                What We Handle
+              </span>
+              <h2 className="font-display font-semibold uppercase text-3xl md:text-4xl tracking-tight mt-2">
+                Every Pest. Every Time.
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line">
+            {SERVICES.map((service, i) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group bg-paper hover:bg-ink p-6 md:p-8 transition-colors"
+              >
+                <span className="font-mono text-xs text-slate group-hover:text-signal">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-display font-semibold uppercase text-lg md:text-xl mt-3 group-hover:text-paper transition-colors">
+                  {service.label}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Trust / why direct-to-operator */}
+      <section className="border-t border-line bg-ink text-paper">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-signal">
+              01
+            </span>
+            <p className="font-display font-semibold uppercase text-xl mt-3 mb-2">
+              You Talk to the Person Doing the Work
+            </p>
+            <p className="text-paper/70 text-sm leading-relaxed">
+              No dispatch centre, no sales team. When you call or WhatsApp,
+              you&apos;re reaching the technician who shows up.
+            </p>
+          </div>
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-signal">
+              02
+            </span>
+            <p className="font-display font-semibold uppercase text-xl mt-3 mb-2">
+              Pricing Fits the Job
+            </p>
+            <p className="text-paper/70 text-sm leading-relaxed">
+              Every infestation is different. Quotes are worked out directly
+              with you — never a generic rate card.
+            </p>
+          </div>
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-signal">
+              03
+            </span>
+            <p className="font-display font-semibold uppercase text-xl mt-3 mb-2">
+              GTA-Wide Coverage
+            </p>
+            <p className="text-paper/70 text-sm leading-relaxed">
+              From residential homes to commercial properties, across the
+              Greater Toronto Area.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
