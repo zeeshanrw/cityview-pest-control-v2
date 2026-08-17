@@ -18,9 +18,8 @@ export default function Header() {
 
           
             href={BUSINESS.phoneHref}
-            className="inline-flex items-center gap-2 bg-signal text-ink px-3 py-2 md:px-4 md:py-2.5 font-display font-semibold uppercase text-xs md:text-sm
-             tracking-wide hover:bg-signal-dark transition-colors"
-             <a>
+            className="inline-flex items-center gap-2 bg-signal text-ink px-3 py-2 md:px-4 md:py-2.5 font-display font-semibold uppercase text-xs md:text-sm tracking-wide hover:bg-signal-dark transition-colors"
+          <a>
             <span className="hidden sm:inline">Call </span>
             {BUSINESS.phone}
           </a>
