@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { BUSINESS, SERVICES } from "@/lib/constants";
+import { ALL_SERVICES, BUSINESS } from "@/lib/constants";
+
+const FOOTER_SERVICES = [
+  { slug: "general-pest-control", label: "General Pest Control" },
+  { slug: "rat-control", label: "Rat Control" },
+  { slug: "cockroach-control", label: "Cockroach Control" },
+  { slug: "bed-bug-treatment", label: "Bed Bug Treatment" },
+  { slug: "wasp-removal", label: "Wasp Removal" },
+  { slug: "wildlife-removal", label: "Wildlife Removal" },
+];
 
 export default function Footer() {
   return (
@@ -26,7 +35,7 @@ export default function Footer() {
             Services
           </p>
           <ul className="grid grid-cols-2 gap-2 text-sm text-paper/70">
-            {SERVICES.map((s) => (
+            {ALL_SERVICES.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
