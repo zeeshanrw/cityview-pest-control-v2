@@ -7,21 +7,43 @@ export const BUSINESS = {
   serviceArea: "Greater Toronto Area",
 } as const;
 
-export const SERVICES = [
+// Full list, used for the contact form's service checkboxes
+export const ALL_SERVICES = [
+  { slug: "wasps-hornets", label: "Wasps & Hornets" },
+  { slug: "ants", label: "Ants" },
+  { slug: "cockroaches", label: "Cockroaches" },
+  { slug: "spiders", label: "Spiders" },
+  { slug: "mosquitoes", label: "Mosquitoes" },
   { slug: "termites", label: "Termites" },
   { slug: "bed-bugs", label: "Bed Bugs" },
   { slug: "rodents", label: "Rodents" },
-  { slug: "ants", label: "Ants" },
-  { slug: "cockroaches", label: "Cockroaches" },
-  { slug: "mosquitoes", label: "Mosquitoes" },
-  { slug: "wasps-hornets", label: "Wasps & Hornets" },
-  { slug: "spiders", label: "Spiders" },
   { slug: "wildlife-removal", label: "Wildlife Removal" },
 ] as const;
 
-export const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/#services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+// Categorized for the nav dropdown.
+// Insects/Rodents point to anchors on the /services overview page.
+// Wildlife is its own separate page.
+export const NAV_CATEGORIES = [
+  {
+    label: "Insects",
+    items: [
+      { slug: "wasps-hornets", label: "Wasps & Hornets", href: "/services#wasps-hornets" },
+      { slug: "ants", label: "Ants", href: "/services#ants" },
+      { slug: "cockroaches", label: "Cockroaches", href: "/services#cockroaches" },
+      { slug: "spiders", label: "Spiders", href: "/services#spiders" },
+      { slug: "mosquitoes", label: "Mosquitoes", href: "/services#mosquitoes" },
+      { slug: "termites", label: "Termites", href: "/services#termites" },
+      { slug: "bed-bugs", label: "Bed Bugs", href: "/services#bed-bugs" },
+    ],
+  },
+  {
+    label: "Rodents",
+    items: [{ slug: "rodents", label: "Mice & Rats", href: "/services#rodents" }],
+  },
+  {
+    label: "Wildlife",
+    items: [
+      { slug: "wildlife-removal", label: "Wildlife Removal", href: "/services/wildlife-removal" },
+    ],
+  },
 ] as const;
