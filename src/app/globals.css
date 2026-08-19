@@ -12,6 +12,8 @@
   --color-line: #d8d6cc;      /* hairline borders on paper bg */
 }
 
+/* Tailwind CSS v4 directive; ignored by generic CSS at-rule linters. */
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
   --color-ink: var(--color-ink);
   --color-paper: var(--color-paper);
@@ -55,4 +57,17 @@ body {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+@keyframes heartbeat-dim {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat-dim 2.5s ease-in-out infinite;
 }
