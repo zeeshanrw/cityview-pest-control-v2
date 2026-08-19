@@ -30,7 +30,7 @@ export default function Home() {
           </div>
 
           <DispatchTicket />
-          <p className="text-center mt-4">\
+          <p className="text-center mt-4">
             <Link
               href="/contact#callback" 
               className="inline-flex items-center gap-1.5 text-sm
