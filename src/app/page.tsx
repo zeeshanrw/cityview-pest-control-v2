@@ -30,11 +30,16 @@ export default function Home() {
           </div>
 
           <DispatchTicket />
-          <p className="text-center mt-3">
-            <Link href="/contact#callback" className="text-sm text-slate underline underline-offset-4 hover:text-ink">
-             Prefer we call you? Request a callback →
-            </Link>
-          </p>
+          <p className="text-center mt-4">\
+            <Link
+              href="/contact#callback" 
+              className="inline-flex items-center gap-1.5 text-sm
+              font-semibold text-ink border-b-2 border-signal hover:text-signal-dark 
+              hover:border-signal-dark transition-colors pb-0.5">
+              
+              Prefer we call you? Request a callback →
+           </Link>
+         </p>
         </div>
       </section>
 
