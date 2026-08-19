@@ -20,12 +20,12 @@ export default function MegaNav() {
   }, []);
 
   const linkClass =
-    "text-paper/80 hover:text-signal hover:bg-paper/10 px-3 py-2 -mx-3 transition-colors";
+  "text-paper/80 hover:text-signal hover:bg-paper/10 px-3 py-2 transition-colors";
 
   return (
     <>
       {/* Desktop nav */}
-      <nav ref={navRef} className="hidden md:flex items-center gap-2 font-body text-sm">
+      <nav ref={navRef} className="hidden md:flex items-center gap-1 font-body text-sm">
         <Link href="/" className={linkClass}>
           Home
         </Link>
