@@ -8,9 +8,9 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 md:px-6 pt-12 md:pt-20 pb-16 md:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-start">
           <div>
-           <span className="font-mono text-xs uppercase tracking-widest text-alert">
-  Wasp Activity Is High Right Now Across the GTA
-</span>
+            <span className="inline-block bg-alert text-paper px-4 py-2 font-display font-bold uppercase text-sm md:text-base tracking-wide">
+              ⚠ Wasp Activity Is High Right Now Across the GTA
+            </span>
 <h1 className="font-display font-semibold uppercase text-4xl md:text-6xl leading-[0.95] tracking-tight mt-4 mb-6">
   Summer&apos;s here.
   <br />
@@ -30,6 +30,11 @@ export default function Home() {
           </div>
 
           <DispatchTicket />
+          <p className="text-center mt-3">
+            <Link href="/contact#callback" className="text-sm text-slate underline underline-offset-4 hover:text-ink">
+             Prefer we call you? Request a callback →
+            </Link>
+          </p>
         </div>
       </section>
 

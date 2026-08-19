@@ -115,6 +115,62 @@ function ContactForm() {
           Request Quote
         </button>
       </form>
+
+      {/* Request a Callback — simpler alternative to the full quote form */}
+      <div id="callback" className="mt-16 border-t border-line pt-10 scroll-mt-20">
+        <h2 className="font-display font-semibold uppercase text-2xl tracking-tight mb-2">
+          Or, Request a Callback
+        </h2>
+        <p className="text-slate leading-relaxed mb-6">
+          Short on time? Leave your number and we&apos;ll call you back —
+          no form to fill out.
+        </p>
+
+        <form className="space-y-4">
+          <div>
+            <label className="block font-mono text-xs uppercase tracking-widest text-slate mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              name="callbackName"
+              required
+              className="w-full border border-line px-4 py-3 bg-paper focus:outline-none focus:border-ink"
+            />
+          </div>
+
+          <div>
+            <label className="block font-mono text-xs uppercase tracking-widest text-slate mb-2">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              name="callbackPhone"
+              required
+              className="w-full border border-line px-4 py-3 bg-paper focus:outline-none focus:border-ink"
+            />
+          </div>
+
+          <div>
+            <label className="block font-mono text-xs uppercase tracking-widest text-slate mb-2">
+              Best Time to Call (optional)
+            </label>
+            <input
+              type="text"
+              name="callbackTime"
+              placeholder="e.g. weekday afternoons"
+              className="w-full border border-line px-4 py-3 bg-paper focus:outline-none focus:border-ink"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full px-5 py-3.5 border-2 border-ink hover:bg-ink hover:text-paper font-display font-semibold uppercase tracking-wide transition-colors"
+          >
+            Request Callback
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
