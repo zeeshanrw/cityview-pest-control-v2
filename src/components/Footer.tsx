@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HOMEPAGE_SERVICES, BUSINESS } from "@/lib/constants";
 
 const FOOTER_SERVICES = [
@@ -18,6 +19,15 @@ export default function Footer() {
           <p className="font-display font-semibold uppercase tracking-tight text-lg mb-3">
             {BUSINESS.name}
           </p>
+          <Link href="/" className="inline-flex items-center mb-3">
+            <Image
+              src="/logo/logo-light.png"
+              alt={BUSINESS.name}
+              width={178}
+              height={100}
+              className="h-9 w-auto"
+            />
+          </Link>
           <p className="text-paper/70 text-sm leading-relaxed mb-4">
             Licensed pest control and wildlife removal serving the{" "}
             {BUSINESS.serviceArea}. No fixed pricing — call or WhatsApp for a
