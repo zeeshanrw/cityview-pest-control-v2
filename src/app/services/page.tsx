@@ -46,10 +46,10 @@ export default function ServicesOverview() {
                 <p className="text-slate leading-relaxed mb-6">{service.summary}</p>
 
                 <div className="flex flex-wrap gap-3">
-                  
+                  <a
                     href={BUSINESS.phoneHref}
                     className="px-5 py-3 bg-signal hover:bg-signal-dark text-ink font-display font-semibold uppercase text-sm tracking-wide transition-colors"
-                  <a>
+                  >
                     Call Now
                   </a>
                   <Link

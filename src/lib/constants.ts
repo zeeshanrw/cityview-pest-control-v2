@@ -47,6 +47,8 @@ export const HOMEPAGE_SERVICES = [
 export const NAV_CATEGORIES = [
   {
     label: "Insects",
+    href: "/services",
+
     items: [
       { slug: "wasps-hornets", label: "Wasps & Hornets", href: "/services#wasps-hornets" },
       { slug: "ants", label: "Ants", href: "/services#ants" },
@@ -60,10 +62,12 @@ export const NAV_CATEGORIES = [
   },
   {
     label: "Rodents",
+    href: "/services#rodents",
     items: [{ slug: "rodents", label: "Mice & Rats", href: "/services#rodents" }],
   },
   {
     label: "Wildlife",
+    href: "/services/wildlife-removal",
     items: [
       { slug: "squirrel-removal", label: "Squirrel Removal", href: "/services/wildlife-removal#squirrel-removal" },
       { slug: "raccoon-removal", label: "Raccoon Removal", href: "/services/wildlife-removal#raccoon-removal" },
