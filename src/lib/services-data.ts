@@ -31,12 +31,14 @@ export const PEST_SERVICES: ServiceContent[] = [
     summary:
       "Seeing a few ants means there's a colony nearby. We trace the source and treat it directly instead of just spraying what's visible.",
     details: [
-      "Ant colonies can be inside walls, under slabs, or in soil right against your foundation. Surface sprays only kill what's visible and rarely solve the actual problem.",
+      "Ant colonies can be inside walls, under slabs, or in soil right against your foundation. Surface sprays only kill what's visible and rarely solve the actual problem, since the colony itself is untouched.",
+      "The GTA sees a few common species, each with different habits. Carpenter ants are larger and tunnel through damp or damaged wood, which can lead to real structural cost if left alone. Pavement ants nest under driveways, sidewalks, and slab foundations. Smaller species like pharaoh ants favour warm, hard-to-reach indoor spots such as wall voids and electrical outlets.",
       "We identify the species and colony location, then apply treatment that addresses the source — reducing the chance of the same trail reappearing weeks later.",
     ],
     signs: [
       "Visible trails in kitchens or bathrooms",
-      "Small dirt mounds near your foundation",
+      "Small dirt or sand-like mounds near your foundation or driveway",
+      "Fine wood shavings near door or window frames — a possible carpenter ant sign",
       "Ants reappearing after store-bought sprays",
     ],
   },
@@ -121,6 +123,24 @@ export const PEST_SERVICES: ServiceContent[] = [
     ],
   },
   {
+    slug: "flies",
+    label: "Flies",
+    tagline: "More than a nuisance — a real health concern.",
+    summary:
+      "Flies spread bacteria fast and multiply even faster. We locate the source and clear both adult flies and breeding sites.",
+    details: [
+      "A few flies around the kitchen or near trash areas can turn into a real infestation quickly — a single batch of eggs can produce dozens of new flies within days, so what looks minor can escalate fast.",
+      "Beyond being a nuisance, flies land on food and surfaces after contact with waste and decay, which is how they spread bacteria into your home. DIY traps and sprays might knock down what's visible, but rarely reach the breeding source, which is why the problem often returns.",
+      "We identify where flies are breeding — inside or just outside the home — and treat both the active population and the source, rather than just the flies you can see.",
+    ],
+    signs: [
+      "Flies persistently returning to the same room, kitchen, or trash area",
+      "Small dark spotting on surfaces near windows or lights",
+      "Visible larvae near garbage or food waste",
+      "A sudden increase in fly activity near entry points",
+    ],
+  },
+  {
     slug: "rodents",
     label: "Rodents",
     tagline: "Mice and rats removed — entry points sealed.",
@@ -128,12 +148,14 @@ export const PEST_SERVICES: ServiceContent[] = [
       "Seeing one mouse usually means more. We trap existing activity and identify how they're getting in.",
     details: [
       "Mice and rats can enter through gaps as small as a coin. Removing existing activity is only half the job — finding and sealing entry points is what prevents it from coming back.",
-      "We handle both: clearing current activity and identifying the access points causing it.",
+      "Most homes deal with house mice, which are active at night and often nest in wall voids, cabinets, or behind appliances. Cooler months tend to push activity indoors as rodents look for shelter and a steady food source.",
+      "We handle both sides of the problem: clearing current activity and identifying the access points causing it, so the fix actually holds.",
     ],
     signs: [
-      "Droppings near baseboards or in cupboards",
-      "Scratching sounds in walls or ceilings",
-      "Gnaw marks on food packaging",
+      "Small, dark, rice-sized droppings near baseboards, cupboards, or under sinks",
+      "Scratching or scurrying sounds in walls or ceilings, especially at night",
+      "Fresh gnaw marks on food packaging, wiring, or wood surfaces",
+      "A faint musty odour in enclosed spaces like pantries or closets",
     ],
   },
 ];

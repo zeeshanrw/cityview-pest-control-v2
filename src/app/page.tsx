@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { DispatchTicket } from "@/components/CTAButtons";
-import { BUSINESS, ALL_SERVICES } from "@/lib/constants";
+import { BUSINESS, HOMEPAGE_SERVICES } from "@/lib/constants";
 export default function Home() {
   return (
     <>
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line">
-            {ALL_SERVICES.map((service, i) => (
+            {HOMEPAGE_SERVICES.map((service, i) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
