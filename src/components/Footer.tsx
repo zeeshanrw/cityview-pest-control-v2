@@ -20,13 +20,15 @@ export default function Footer() {
             {BUSINESS.name}
           </p>
           <Link href="/" className="inline-flex items-center mb-3">
-            <Image
-              src="/logo/logo-light.png"
-              alt={BUSINESS.name}
-              width={178}
-              height={100}
-              className="h-9 w-auto"
-            />
+           <Image
+                         src="/logo/logo-light.png"
+                         alt={BUSINESS.name}
+                         width={1009}
+                         height={354}
+                         className="h-20 w-auto"
+                         quality={90}
+           
+                       />
           </Link>
           <p className="text-paper/70 text-sm leading-relaxed mb-4">
             Licensed pest control and wildlife removal serving the{" "}

@@ -44,18 +44,6 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Brand mark */}
-      <section className="border-t border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24 flex justify-center">
-          <Image
-            src="/logo/logo.png"
-            alt="Cityview Pest Control"
-            width={1672}
-            height={941}
-            className="w-full max-w-xl md:max-w-2xl h-auto"
-          />
-        </div>
-      </section>
 
 
       {/* Services — case file index */}

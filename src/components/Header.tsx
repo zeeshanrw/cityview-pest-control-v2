@@ -10,11 +10,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo/logo-light.png"
+              src="/logo/cityview_logo.png"
               alt={BUSINESS.name}
-              width={178}
-              height={100}
-              className="h-10 md:h-12 w-auto"
+              width={1009}
+              height={354}
+              className="h-22  w-auto"
+              quality={90}
+
             />
           </Link>
 
