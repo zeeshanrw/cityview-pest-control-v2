@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Inter, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CallbackWidget from "@/components/CallbackWidget";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body">
         <Header />
+        <CallbackWidget />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

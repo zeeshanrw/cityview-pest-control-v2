@@ -1,50 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
-import { DispatchTicket } from "@/components/CTAButtons";
-import { BUSINESS, HOMEPAGE_SERVICES } from "@/lib/constants";
+import HomeHeroSlideshow from "@/components/HomeHeroSlideshow";
+import { HOMEPAGE_SERVICES } from "@/lib/constants";
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="mx-auto max-w-6xl px-4 md:px-6 pt-12 md:pt-20 pb-16 md:pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-start">
-          <div>
-            <span className="inline-block bg-alert text-paper px-4 py-2 font-display font-bold uppercase text-sm md:text-base tracking-wide animate-heartbeat">
-  ⚠ Wasp Activity Is High Right Now Across the GTA
-</span>
-<h1 className="font-display font-semibold uppercase text-4xl md:text-6xl leading-[0.95] tracking-tight mt-4 mb-6">
-  Summer&apos;s here.
-  <br />
-  So are the pests.
-</h1>
-<p className="text-slate text-lg leading-relaxed max-w-lg mb-8">
-  From wasp nests to ants and mosquitoes, we handle it all across the
-  GTA — fast, direct, and priced to fit the job. Call or WhatsApp and
-  get back to your summer.
-</p>
-
-            <div className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-sm text-slate">
-              <span>&#10003; Same-day response available</span>
-              <span>&#10003; All pests, all wildlife</span>
-              <span>&#10003; No fixed pricing surprises</span>
-            </div>
-          </div>
-
-          <DispatchTicket />
-          <p className="text-center mt-4">
-            <Link
-              href="/contact#callback" 
-              className="inline-flex items-center gap-1.5 text-sm
-              font-semibold text-ink border-b-2 border-signal hover:text-signal-dark 
-              hover:border-signal-dark transition-colors pb-0.5">
-              
-              Prefer we call you? Request a callback →
-           </Link>
-         </p>
-        </div>
-      </section>
-
-
+      <HomeHeroSlideshow />
 
       {/* Services — case file index */}
       <section id="services" className="border-t border-line">

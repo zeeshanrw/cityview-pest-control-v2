@@ -2,15 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { HOMEPAGE_SERVICES, BUSINESS } from "@/lib/constants";
 
-const FOOTER_SERVICES = [
-  { slug: "general-pest-control", label: "General Pest Control" },
-  { slug: "rat-control", label: "Rat Control" },
-  { slug: "cockroach-control", label: "Cockroach Control" },
-  { slug: "bed-bug-treatment", label: "Bed Bug Treatment" },
-  { slug: "wasp-removal", label: "Wasp Removal" },
-  { slug: "wildlife-removal", label: "Wildlife Removal" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-ink text-paper mt-24">
