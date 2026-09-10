@@ -52,7 +52,7 @@ export default function MegaNav() {
 
             {openCategory === category.label && (
               <div className="absolute top-full left-0 pt-2 w-56 z-50">
-                <div className="bg-paper text-ink border border-line shadow-lg">
+                <div className="bg-paper text-ink border border-line shadow-lg rounded-lg overflow-hidden">
                   {category.items.map((item) => (
                     <Link
                       key={item.slug}

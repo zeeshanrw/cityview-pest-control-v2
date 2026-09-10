@@ -16,8 +16,10 @@ export const ALL_SERVICES = [
   { slug: "mosquitoes", label: "Mosquitoes" },
   { slug: "termites", label: "Termites" },
   { slug: "bed-bugs", label: "Bed Bugs" },
-    { slug: "rodents", label: "Rodents" },
+  { slug: "rodents", label: "Rodents" },
   { slug: "flies", label: "Flies" },
+  { slug: "fleas-ticks", label: "Fleas & Ticks" },
+  { slug: "silverfish", label: "Silverfish" },
   { slug: "squirrel-removal", label: "Squirrel Removal" },
   { slug: "raccoon-removal", label: "Raccoon Removal" },
   { slug: "bat-removal", label: "Bat Removal" },
@@ -26,7 +28,7 @@ export const ALL_SERVICES = [
   { slug: "opossum-removal", label: "Opossum Removal" },
 ] as const;
 
-// Shorter list specifically for the homepage services grid (9 tiles).
+// Shorter list specifically for the homepage services grid.
 // Wildlife is one combined tile here, linking to its own overview page.
 export const HOMEPAGE_SERVICES = [
   { slug: "wasps-hornets", label: "Wasps & Hornets" },
@@ -38,6 +40,8 @@ export const HOMEPAGE_SERVICES = [
   { slug: "bed-bugs", label: "Bed Bugs" },
   { slug: "rodents", label: "Rodents" },
   { slug: "flies", label: "Flies" },
+  { slug: "fleas-ticks", label: "Fleas & Ticks" },
+  { slug: "silverfish", label: "Silverfish" },
   { slug: "wildlife-removal", label: "Wildlife Removal" },
 ] as const;
 
@@ -58,6 +62,8 @@ export const NAV_CATEGORIES = [
       { slug: "termites", label: "Termites", href: "/services#termites" },
       { slug: "bed-bugs", label: "Bed Bugs", href: "/services#bed-bugs" },
       { slug: "flies", label: "Flies", href: "/services#flies" },
+      { slug: "fleas-ticks", label: "Fleas & Ticks", href: "/services#fleas-ticks" },
+      { slug: "silverfish", label: "Silverfish", href: "/services#silverfish" },
     ],
   },
   {

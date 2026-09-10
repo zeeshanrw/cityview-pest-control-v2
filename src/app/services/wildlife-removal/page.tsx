@@ -30,7 +30,7 @@ export default function WildlifeOverview() {
           >
             <div className="mx-auto max-w-6xl px-4 md:px-6 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className={imageOnLeft ? "md:order-1" : "md:order-2"}>
-                <div className="aspect-4/3 bg-ink/5 border border-line flex items-center justify-center">
+                <div className="aspect-4/3 bg-ink/5 border border-line rounded-lg flex items-center justify-center">
                   <span className="font-mono text-xs text-slate uppercase tracking-widest">
                     {animal.label} — image placeholder
                   </span>

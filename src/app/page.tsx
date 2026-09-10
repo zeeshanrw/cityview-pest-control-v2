@@ -8,8 +8,8 @@ export default function Home() {
 
       {/* Services — case file index */}
       <section id="services" className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
-          <div className="flex items-end justify-between mb-10">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 pt-12 pb-16 md:pt-16 md:pb-24">
+          <div className="mb-10 flex justify-center text-center">
             <div>
               <span className="font-mono text-xs uppercase tracking-widest text-signal">
                 What We Handle
@@ -20,7 +20,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line rounded-lg overflow-hidden">
             {HOMEPAGE_SERVICES.map((service, i) => (
               <Link
                 key={service.slug}

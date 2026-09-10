@@ -32,9 +32,9 @@ export default function ServicesOverview() {
           >
             <div className="mx-auto max-w-6xl px-4 md:px-6 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                             <div className={imageOnLeft ? "md:order-1" : "md:order-2"}>
-                <div className="relative aspect-4/3 border border-line overflow-hidden">
+                <div className="relative aspect-4/3 border border-line rounded-lg overflow-hidden">
                   <Image
-                    src={`/images/services/${service.slug}.png`}
+                    src={`/images/services/${service.imageSlug ?? service.slug}.png`}
                     alt={`${service.label} pest control in the GTA`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"

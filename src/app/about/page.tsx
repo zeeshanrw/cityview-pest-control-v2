@@ -34,7 +34,7 @@ export default function AboutPage() {
           </div>
 
           {/* Placeholder — swap for a real photo once purchased/provided */}
-          <div className="aspect-4/3 bg-ink/5 border border-line flex items-center justify-center">
+          <div className="aspect-4/3 bg-ink/5 border border-line rounded-lg flex items-center justify-center">
             <span className="font-mono text-xs text-slate uppercase tracking-widest">
               Photo placeholder
             </span>
@@ -103,19 +103,19 @@ export default function AboutPage() {
             Credentials
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="border border-line p-5">
+            <div className="border border-line rounded-lg p-5">
               <p className="font-mono text-xs uppercase tracking-widest text-slate mb-1">
                 WSIB
               </p>
               <p className="font-display font-semibold">Registered &amp; Covered</p>
             </div>
-            <div className="border border-line p-5">
+            <div className="border border-line rounded-lg p-5">
               <p className="font-mono text-xs uppercase tracking-widest text-slate mb-1">
                 Pest Control License
               </p>
               <p className="font-display font-semibold">[LICENSE NUMBER]</p>
             </div>
-            <div className="border border-line p-5">
+            <div className="border border-line rounded-lg p-5">
               <p className="font-mono text-xs uppercase tracking-widest text-slate mb-1">
                 Association
               </p>

@@ -1,6 +1,7 @@
 export type ServiceContent = {
   slug: string;
   label: string;
+  imageSlug?: string;
   tagline: string;
   summary: string; // shown on the overview page
   details: string[]; // paragraphs shown on the dedicated page
@@ -156,6 +157,42 @@ export const PEST_SERVICES: ServiceContent[] = [
       "Scratching or scurrying sounds in walls or ceilings, especially at night",
       "Fresh gnaw marks on food packaging, wiring, or wood surfaces",
       "A faint musty odour in enclosed spaces like pantries or closets",
+    ],
+  },
+  {
+    slug: "fleas-ticks",
+    label: "Fleas & Ticks",
+    imageSlug: "bed-bugs",
+    tagline: "Biting pests treated before they spread.",
+    summary:
+      "Fleas and ticks can move through carpets, furniture, yards, and pets. We treat the active areas and help reduce the chance of a return.",
+    details: [
+      "Fleas and ticks are small, fast-moving pests that can spread through soft surfaces and outdoor areas before the problem is obvious.",
+      "We inspect the activity pattern, treat the key areas, and explain the practical steps that help keep the problem from coming back.",
+    ],
+    signs: [
+      "Small bites around ankles or lower legs",
+      "Pets scratching more than usual",
+      "Tiny dark specks in pet bedding, carpets, or furniture",
+      "Ticks found after time in grass, shrubs, or wooded areas",
+    ],
+  },
+  {
+    slug: "silverfish",
+    label: "Silverfish",
+    imageSlug: "spiders",
+    tagline: "Moisture-loving pests cleared from hidden areas.",
+    summary:
+      "Silverfish often show up in bathrooms, basements, laundry rooms, and storage areas. We target the places they hide and breed.",
+    details: [
+      "Silverfish thrive in damp, dark spaces and can damage paper, cardboard, books, clothing, and stored items over time.",
+      "We look for the moisture-prone hiding spots and treat cracks, gaps, baseboards, and storage areas where silverfish activity tends to build.",
+    ],
+    signs: [
+      "Small silver insects moving quickly near baseboards",
+      "Activity in bathrooms, basements, laundry rooms, or closets",
+      "Tiny holes or scraping marks on paper, books, or cardboard",
+      "Shed skins or yellowish staining near stored items",
     ],
   },
 ];

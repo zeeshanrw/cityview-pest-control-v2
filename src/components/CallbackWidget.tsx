@@ -1,12 +1,15 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { BUSINESS } from "@/lib/constants";
 
 export default function CallbackWidget() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(true);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [sent, setSent] = useState(false);
+  const isContactPage = pathname === "/contact";
 
   useEffect(() => {
     if (!open || hasInteracted) return;
@@ -53,6 +56,8 @@ export default function CallbackWidget() {
     setOpen(false);
   }
 
+  if (isContactPage) return null;
+
   return (
     <aside className="fixed right-3 top-20 z-40 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col items-end md:right-6 md:top-24">
       <div
@@ -63,7 +68,7 @@ export default function CallbackWidget() {
         }`}
         aria-hidden={!open}
       >
-        <div className="border border-paper/30 bg-paper/55 text-ink shadow-2xl backdrop-blur-lg">
+        <div className="overflow-hidden rounded-lg border border-paper/30 bg-paper/55 text-ink shadow-2xl backdrop-blur-lg">
           <div className="flex items-start justify-between gap-4 border-b border-paper/20 bg-ink/62 px-4 py-3 text-paper backdrop-blur-lg">
             <div>
               <p className="font-display text-base font-semibold uppercase tracking-wide">
