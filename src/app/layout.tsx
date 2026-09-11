@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import CallbackWidget from "@/components/CallbackWidget";
+import FirstVisitAnts from "@/components/FirstVisitAnts";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CallbackWidget />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FirstVisitAnts />
       </body>
     </html>
   );

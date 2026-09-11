@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { WILDLIFE_SERVICES } from "@/lib/wildlife-data";
 import { BUSINESS } from "@/lib/constants";
 
@@ -30,11 +31,22 @@ export default function WildlifeOverview() {
           >
             <div className="mx-auto max-w-6xl px-4 md:px-6 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className={imageOnLeft ? "md:order-1" : "md:order-2"}>
-                <div className="aspect-4/3 bg-ink/5 border border-line rounded-lg flex items-center justify-center">
+                {animal.image ? (
+                  <div className="relative aspect-video overflow-hidden rounded-lg border border-line">
+                    <Image
+                      src={animal.image.src}
+                      alt={animal.image.alt}
+                      fill
+                      sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1152px) calc((100vw - 88px) / 2), 532px"
+                      className="object-cover"
+                      preload={i === 0}
+                    />
+                  </div>
+                ) : <div className="aspect-4/3 bg-ink/5 border border-line rounded-lg flex items-center justify-center">
                   <span className="font-mono text-xs text-slate uppercase tracking-widest">
                     {animal.label} — image placeholder
                   </span>
-                </div>
+                </div>}
               </div>
 
               <div className={imageOnLeft ? "md:order-2" : "md:order-1"}>

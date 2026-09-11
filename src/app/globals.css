@@ -98,3 +98,38 @@ body {
 .animate-heartbeat {
   animation: heartbeat-dim 2.5s ease-in-out infinite;
 }
+
+.intro-bug {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -24px 0 0 -18px;
+  color: #241b15;
+  opacity: 0;
+  filter: drop-shadow(0 1px 1px rgb(255 255 255 / 75%)) drop-shadow(2px 3px 2px rgb(0 0 0 / 25%));
+  animation: intro-bug-crawl 4.4s linear both;
+}
+.intro-bug-drawing { width: 36px; height: 48px; }
+.intro-bug-roach { color: #59351f; }
+.intro-bug-roach .intro-bug-drawing { width: 42px; height: 56px; }
+.intro-ant-legs {
+  transform-origin: 24px 34px;
+  animation: intro-ant-step 100ms ease-in-out infinite alternate;
+}
+@keyframes intro-bug-crawl {
+  0% { opacity: 0; transform: translate(var(--start-x), var(--start-y)) rotate(var(--angle)); }
+  5% { opacity: 1; }
+  30% { transform: translate(calc(var(--end-x) * .25 + 12px), calc(var(--end-y) * .25)) rotate(calc(var(--angle) + 8deg)); }
+  60% { transform: translate(calc(var(--end-x) * .56 - 10px), calc(var(--end-y) * .56)) rotate(calc(var(--angle) - 7deg)); }
+  88% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--end-x), var(--end-y)) rotate(var(--angle)); }
+}
+@keyframes intro-ant-step {
+  from { transform: rotate(-8deg) scaleX(.9); }
+  to { transform: rotate(8deg) scaleX(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .first-visit-ants:not(.bug-preview) { display: none; }
+  .first-visit-ants:not(.bug-preview) .intro-bug,
+  .first-visit-ants:not(.bug-preview) .intro-ant-legs { animation: none; }
+}

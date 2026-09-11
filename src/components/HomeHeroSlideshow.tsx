@@ -54,6 +54,54 @@ const SLIDES = [
     copy:
       "Seasonal pest pressure moves quickly. Same-day response is available when scheduling allows.",
   },
+  {
+    src: "/images/services/squirl_bw.png",
+    alt: "Squirrels in trees near residential properties",
+    label: "Squirrel Removal",
+    headline: "Keep Squirrels Out of Your Attic.",
+    copy:
+      "Humane removal and careful sealing of roofline, soffit, and fascia entry points.",
+  },
+  {
+    src: "/images/services/raccoon.png",
+    alt: "Raccoons near residential structures",
+    label: "Raccoon Removal",
+    headline: "Safe Help for Unwanted Raccoons.",
+    copy:
+      "We locate how raccoons entered, remove them carefully, and help prevent their return.",
+  },
+  {
+    src: "/images/services/bat.png",
+    alt: "Bats roosting near a building",
+    label: "Bat Removal",
+    headline: "Humane Bat Exclusion Done Carefully.",
+    copy:
+      "Appropriate exclusion methods help bats leave while protecting your home from re-entry.",
+  },
+  {
+    src: "/images/services/skunk.png",
+    alt: "Skunks outdoors near a residential structure",
+    label: "Skunk Removal",
+    headline: "Remove Skunks Without the Stress.",
+    copy:
+      "Low-stress removal for skunks denning beneath decks, sheds, porches, and other structures.",
+  },
+  {
+    src: "/images/services/bird.png",
+    alt: "Nesting birds and pigeons around buildings",
+    label: "Bird Removal",
+    headline: "Clear Nests From Vents and Rooflines.",
+    copy:
+      "We remove nesting activity and recommend practical deterrents to reduce repeat problems.",
+  },
+  {
+    src: "/images/services/Opossum.png",
+    alt: "Opossums around residential yards and decks",
+    label: "Opossum Removal",
+    headline: "Get Opossums Out Safely.",
+    copy:
+      "Careful removal and entry-point work for opossums beneath porches, sheds, and crawl spaces.",
+  },
 ];
 
 export default function HomeHeroSlideshow() {

@@ -1,6 +1,7 @@
 export type WildlifeContent = {
   slug: string;
   label: string;
+  image?: { src: string; alt: string };
   tagline: string;
   summary: string;
   details: string[];
@@ -11,6 +12,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
   {
     slug: "squirrel-removal",
     label: "Squirrel Removal",
+    image: { src: "/images/services/squirl_bw.png", alt: "Black and grey squirrels perched on tree branches" },
     tagline: "Roofline and attic entry points found and sealed.",
     summary:
       "Squirrels chew through soffits and fascia to get into attics. We remove them humanely and close off how they got in.",
@@ -28,6 +30,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
   {
     slug: "raccoon-removal",
     label: "Raccoon Removal",
+    image: { src: "/images/services/raccoon.png", alt: "Raccoons beside a wooden structure and on a fallen tree" },
     tagline: "Handled carefully — raccoons can be aggressive when cornered.",
     summary:
       "Raccoons are strong and resourceful, and can cause serious damage once inside a chimney, attic, or crawl space.",
@@ -45,6 +48,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
   {
     slug: "bat-removal",
     label: "Bat Removal",
+    image: { src: "/images/services/bat.png", alt: "Close-up views of roosting bats" },
     tagline: "Removal that respects provincial wildlife protections.",
     summary:
       "Bats are a protected species in Ontario, so removal has to follow specific timing and methods — not just sealing an entry point.",
@@ -62,6 +66,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
   {
     slug: "skunk-removal",
     label: "Skunk Removal",
+    image: { src: "/images/services/skunk.png", alt: "Adult skunks and young skunks outdoors near a structure" },
     tagline: "Odour-conscious removal from under decks and sheds.",
     summary:
       "Skunks tend to den under decks, sheds, and porches. We remove them without triggering the spray you're trying to avoid.",
@@ -79,6 +84,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
   {
     slug: "bird-removal",
     label: "Bird Removal",
+    image: { src: "/images/services/bird.png", alt: "Bird nesting in a roof gutter and pigeons gathering near a building" },
     tagline: "Nests and roosting birds cleared from vents, eaves, and rooflines.",
     summary:
       "Pigeons, starlings, and other birds nesting in vents or rooflines can block airflow and create a mess fast. We clear the nest and reduce return visits.",
@@ -96,6 +102,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
   {
     slug: "opossum-removal",
     label: "Opossum Removal",
+    image: { src: "/images/services/Opossum.png", alt: "Opossums walking around decks and residential yards" },
     tagline: "Low-conflict removal — opossums are generally non-aggressive.",
     summary:
       "Opossums often end up denning in sheds, crawl spaces, or under porches. They're not aggressive, but they don't belong indoors.",
