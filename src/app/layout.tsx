@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import CallbackWidget from "@/components/CallbackWidget";
 import FirstVisitAnts from "@/components/FirstVisitAnts";
+import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -25,9 +26,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Cityview Pest Control | GTA Exterminator & Wildlife Removal",
   description:
-    "Fast, reliable pest control and wildlife removal across the GTA. Call or WhatsApp for a free quote — same-day response available.",
+    "Family-owned, licensed pest control and humane wildlife removal in the Greater Toronto Area. Call or WhatsApp Cityview for a free quote.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -37,10 +39,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${oswald.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-lg focus:bg-paper focus:px-5 focus:py-3">Skip to content</a>
         <Header />
         <Breadcrumbs />
         <CallbackWidget />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "Cityview Pest Control", url: SITE_URL, logo: `${SITE_URL}/logo/cityview_logo.png`, telephone: "+1-647-779-1770", email: "info@cityviewpestcontrol.ca", areaServed: "Greater Toronto Area, Ontario, Canada" }).replace(/</g, "\\u003c") }} />
         <Footer />
         <FirstVisitAnts />
       </body>

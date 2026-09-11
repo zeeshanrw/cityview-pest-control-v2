@@ -1,82 +1,47 @@
-# Cityview Pest Control — Website
+# Cityview Pest Control
 
-Professional website for Cityview Pest Control, a solo-operated pest control
-and wildlife removal business serving Peel Region (Mississauga, Brampton)
-and York Region, GTA.
+Family-owned pest control and humane wildlife removal website, built with Next.js 16.3.5, React 19, TypeScript and Tailwind CSS 4.
 
-## Tech Stack
+## Development
 
-- **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Hosting (planned):** Vercel
+Use Node.js 22 LTS.
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.18+ (LTS recommended)
-- npm
-
-### Local Development
-
-```bash
-npm install
+```sh
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000. Restart development after changing dependencies or Next configuration.
 
-## Project Structure
+## Production for EthicalHost
 
-```
-src/
-  app/
-    page.tsx              # Homepage
-    about/                # About page
-    contact/              # Contact page (call/WhatsApp CTA + short form)
-    blog/                 # Seasonal pest guides (SEO content)
-    services/
-      termites/
-      bed-bugs/
-      rodents/
-      ants/
-      cockroaches/
-      mosquitoes/
-      wasps-hornets/
-      spiders/
-      wildlife-removal/
-  components/              # Shared UI components (Header, Footer, CTA buttons, etc.)
-  lib/                     # Utilities, SEO helpers, constants
-public/
-  images/
-    logo/                  # Client-provided logo assets
-    team/                  # Real photos of owner/van/job sites
-    services/              # Pest-specific images (real + licensed stock)
+```sh
+npm run lint
+npm run build:static
+npm run preview:static
 ```
 
-## Key Business Requirements
+The upload folder is `out/`, including `.htaccess`. It contains a complete static website and optimized images; Node.js is required only to build it locally. In another terminal, run `npm run check:launch` against the local preview. Follow [the launch guide](docs/launch-guide.md) before uploading or announcing the site.
 
-- **Pricing model:** Not fixed. Every CTA should say "Call or WhatsApp for a
-  Free Quote" — never show pricing tables or fixed rates.
-- **Primary contact:** 647-779-1770 (call + WhatsApp)
-- **Contact form:** Secondary only. Max 3-4 fields (name, city, pest type,
-  contact method). No pricing fields.
-- **Images:** Only real client-provided photos or properly licensed stock
-  (Unsplash/Shutterstock). Never use images from competitor sites.
-- **Service area:** Mississauga, Brampton (confirmed). York Region cities
-  pending confirmation — do not list specific York municipalities until
-  confirmed with client.
+For a host with a Node.js runtime, use `npm run build` followed by `npm start` instead. Do not use `next start` immediately after a static export; rebuild for server mode first.
 
-Full requirements: see `/docs/requirements.md` (or the project's Claude
-Project resources).
+## Contact flow
 
-## Deployment
+The quote and callback forms post to `public/send-contact.php`, which uses the host's PHP mail service to deliver requests to `info@cityviewpestcontrol.ca`. Callback forms also offer a prefilled WhatsApp submission. Form submissions are not stored in a database. Confirm PHP `mail()` is enabled and send live test submissions after upload.
 
-Planned: Vercel (recommended for Next.js — zero-config, free tier fits this
-project, automatic deploys on push to `main`).
+## Content and configuration
 
-## Environment Variables
+- `src/lib/services-data.ts`: pest services.
+- `src/lib/wildlife-data.ts`: wildlife services and image paths.
+- `src/lib/constants.ts`: business phone and navigation.
+- `src/lib/seo.ts`: canonical domain, metadata and service titles.
+- `src/components/HomeHeroSlideshow.tsx`: homepage photos.
+- `public/images/services` and `public/logo`: source image assets.
+- `deployment/ethicalhost.htaccess`: static hosting redirects and headers.
+- `scripts/build-static.mjs`: generates WebP image variants and the upload folder.
 
-Copy `.env.example` to `.env.local` and fill in values as needed (analytics
-IDs, form endpoint, etc. — added as they're set up).
+The About section uses a finished brand card until a real family/owner photo is provided. Service tiles remain a responsive grid. The slideshow and introductory bugs respect reduced-motion preferences.
+
+## Verification
+
+`npm run lint`, `npm run build`, `npm run build:static`, `npm audit`, and `npm run check:launch` cover code, builds, known dependency advisories, and page/asset checks. Browser testing covers selected interactions and mobile layouts. Live SSL, redirects, email, WhatsApp receipt, image rights and public performance require the final hosting/account checks described in the launch guide.

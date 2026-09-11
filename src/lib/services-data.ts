@@ -162,7 +162,6 @@ export const PEST_SERVICES: ServiceContent[] = [
   {
     slug: "fleas-ticks",
     label: "Fleas & Ticks",
-    imageSlug: "bed-bugs",
     tagline: "Biting pests treated before they spread.",
     summary:
       "Fleas and ticks can move through carpets, furniture, yards, and pets. We treat the active areas and help reduce the chance of a return.",
@@ -180,7 +179,6 @@ export const PEST_SERVICES: ServiceContent[] = [
   {
     slug: "silverfish",
     label: "Silverfish",
-    imageSlug: "spiders",
     tagline: "Moisture-loving pests cleared from hidden areas.",
     summary:
       "Silverfish often show up in bathrooms, basements, laundry rooms, and storage areas. We target the places they hide and breed.",

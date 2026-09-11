@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useNavigationContext } from "@/lib/use-navigation-context";
+import { SITE_URL } from "@/lib/seo";
 
 export default function Breadcrumbs() {
   const { crumbs } = useNavigationContext();
@@ -9,6 +10,7 @@ export default function Breadcrumbs() {
 
   return (
     <nav aria-label="Breadcrumb" className="border-b border-line bg-paper">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: crumbs.map((crumb, index) => ({ "@type": "ListItem", position: index + 1, name: crumb.label, item: `${SITE_URL}${crumb.href}` })) }).replace(/</g, "\\u003c") }} />
       <ol className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-2 gap-y-1 px-4 py-3 text-xs md:px-6 md:text-sm">
         {crumbs.map((crumb, index) => (
           <li key={`${crumb.href}-${index}`} className="flex items-center gap-2">

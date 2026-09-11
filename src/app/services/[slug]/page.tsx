@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PEST_SERVICES, getServiceBySlug } from "@/lib/services-data";
 import { BUSINESS } from "@/lib/constants";
+import { pageMetadata, pestTitles } from "@/lib/seo";
+import ServiceSchema from "@/components/ServiceSchema";
 
 export function generateStaticParams() {
   return PEST_SERVICES.map((s) => ({ slug: s.slug }));
@@ -15,10 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
-  return {
-    title: `${service.label} Control | Cityview Pest Control`,
-    description: service.summary,
-  };
+  return pageMetadata(`${pestTitles[slug] ?? service.label} | Cityview Pest Control`, service.summary, `/services/${slug}`);
 }
 
 export default async function ServiceDetailPage({
@@ -32,6 +31,7 @@ export default async function ServiceDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 md:px-6 py-12 md:py-16">
+      <ServiceSchema name={pestTitles[slug] ?? service.label} description={service.summary} path={`/services/${slug}`} />
       <Link href="/services" className="text-sm text-slate hover:text-ink">
         ← All Services
       </Link>

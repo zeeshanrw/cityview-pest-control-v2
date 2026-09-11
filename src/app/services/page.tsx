@@ -2,13 +2,11 @@ import Link from "next/link";
 import { PEST_SERVICES } from "@/lib/services-data";
 import { BUSINESS } from "@/lib/constants";
 import Image from "next/image";
+import PestIllustration from "@/components/PestIllustration";
+import { pageMetadata } from "@/lib/seo";
 
 
-export const metadata = {
-  title: "Pest Control Services | Cityview Pest Control",
-  description:
-    "Wasps, ants, rodents, termites, and more — pest control services across the GTA. Call or WhatsApp for a free quote.",
-};
+export const metadata = pageMetadata("Pest Control Services | Cityview Pest Control", "Wasps, ants, rodents, termites, and more — pest control services across the GTA. Call or WhatsApp for a free quote.", "/services");
 
 export default function ServicesOverview() {
   return (
@@ -33,14 +31,14 @@ export default function ServicesOverview() {
             <div className="mx-auto max-w-6xl px-4 md:px-6 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                             <div className={imageOnLeft ? "md:order-1" : "md:order-2"}>
                 <div className="relative aspect-4/3 border border-line rounded-lg overflow-hidden">
-                  <Image
+                  {service.slug === "fleas-ticks" || service.slug === "silverfish" ? <div className="flex h-full items-center justify-center bg-signal"><div className="[&>svg]:h-40 [&>svg]:w-40"><PestIllustration slug={service.slug} /></div></div> : <Image
                     src={`/images/services/${service.imageSlug ?? service.slug}.png`}
                     alt={`${service.label} pest control in the GTA`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     priority={i === 0}
-                  />
+                  />}
                 </div>
               </div>
 

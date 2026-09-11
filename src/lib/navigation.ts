@@ -1,6 +1,7 @@
 import { NAV_CATEGORIES } from "./constants";
 
 export function getNavigationContext(pathname: string, hash = "") {
+  pathname = pathname.replace(/\/$/, "") || "/";
   const category = NAV_CATEGORIES.find((category) =>
     category.items.some((item) =>
       pathname === `${category.href.split("#")[0]}/${item.slug}` ||
@@ -16,8 +17,8 @@ export function getNavigationContext(pathname: string, hash = "") {
   if (category) {
     crumbs.push({ label: category.label, href: category.href });
     if (item) crumbs.push({ label: item.label, href: `${pathname}${hash}` });
-  } else if (pathname === "/about" || pathname === "/contact") {
-    crumbs.push({ label: pathname === "/about" ? "About" : "Contact", href: pathname });
+  } else if (["/about", "/contact", "/privacy"].includes(pathname)) {
+    crumbs.push({ label: pathname === "/about" ? "About" : pathname === "/contact" ? "Contact" : "Privacy", href: pathname });
   }
   return { category, item, crumbs };
 }

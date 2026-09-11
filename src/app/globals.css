@@ -43,6 +43,7 @@ body {
 }
 
 @layer base {
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   button,
   input,
   select,
@@ -98,6 +99,15 @@ body {
 .animate-heartbeat {
   animation: heartbeat-dim 2.5s ease-in-out infinite;
 }
+
+/* Keep final footer links clear of the floating callback button. */
+footer { padding-bottom: 5rem; }
+
+/* Small accent text needs a deeper amber on light surfaces. */
+main .text-signal { color: #9b530c; }
+main .bg-ink .text-signal,
+main section.bg-ink .text-signal { color: var(--color-signal); }
+main .text-signal-dark { color: #9b530c; }
 
 .intro-bug {
   position: absolute;

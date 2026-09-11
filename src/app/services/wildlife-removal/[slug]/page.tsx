@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { WILDLIFE_SERVICES, getWildlifeBySlug } from "@/lib/wildlife-data";
 import { BUSINESS } from "@/lib/constants";
+import { pageMetadata } from "@/lib/seo";
+import ServiceSchema from "@/components/ServiceSchema";
 
 export function generateStaticParams() {
   return WILDLIFE_SERVICES.map((s) => ({ slug: s.slug }));
@@ -15,10 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const animal = getWildlifeBySlug(slug);
   if (!animal) return {};
-  return {
-    title: `${animal.label} | Cityview Pest Control`,
-    description: animal.summary,
-  };
+  return pageMetadata(`${animal.label} | Cityview Pest Control`, animal.summary, `/services/wildlife-removal/${slug}`);
 }
 
 export default async function WildlifeDetailPage({
@@ -32,6 +31,7 @@ export default async function WildlifeDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 md:px-6 py-12 md:py-16">
+      <ServiceSchema name={animal.label} description={animal.summary} path={`/services/wildlife-removal/${slug}`} />
       <Link href="/services/wildlife-removal" className="text-sm text-slate hover:text-ink">
         ← All Wildlife Services
       </Link>

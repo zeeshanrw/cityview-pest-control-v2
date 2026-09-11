@@ -7,14 +7,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-ink text-paper border-b border-paper/10">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center">
+        <div className="flex h-20 items-center gap-2 lg:gap-4">
+          <Link href="/" className="mr-auto flex min-w-0 items-center">
             <Image
               src="/logo/cityview_logo.png"
               alt={BUSINESS.name}
               width={1009}
               height={354}
-              className="h-22  w-auto"
+              className="h-auto max-h-16 w-[10rem] object-contain sm:w-[15rem]"
               quality={90}
 
             />
@@ -24,9 +24,9 @@ export default function Header() {
 
           <a
             href={BUSINESS.phoneHref}
-            className="inline-flex items-center gap-2 bg-signal text-ink px-3 py-2 md:px-4 md:py-2.5 font-display font-semibold uppercase text-xs md:text-sm tracking-wide hover:bg-signal-dark transition-colors"
+            className="inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-signal text-ink px-2 py-3 lg:px-4 font-display font-semibold uppercase text-xs lg:text-sm tracking-wide hover:bg-signal-dark transition-colors"
           >
-            <span className="hidden sm:inline">Call </span>
+            <span className="hidden lg:inline">Call </span>
             {BUSINESS.phone}
           </a>
         </div>

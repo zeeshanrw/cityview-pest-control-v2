@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/public/optimized/
+/cityview-site*.zip
 
 # production
 /build

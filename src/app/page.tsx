@@ -1,9 +1,13 @@
 import ServiceGrid from "@/components/ServiceGrid";
 import HomeHeroSlideshow from "@/components/HomeHeroSlideshow";
+import GoogleReviewsSlideshow from "@/components/GoogleReviewsSlideshow";
+import { pageMetadata } from "@/lib/seo";
+export const metadata = pageMetadata("Cityview Pest Control | GTA Pest & Wildlife Removal", "Family-owned, licensed pest control and humane wildlife removal across the Greater Toronto Area. Call Cityview for a free quote.", "/");
 export default function Home() {
   return (
     <>
       <HomeHeroSlideshow />
+      <GoogleReviewsSlideshow />
 
       {/* Services — case file index */}
       <section id="services" className="border-t border-line">

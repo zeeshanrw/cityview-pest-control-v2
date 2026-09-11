@@ -2,12 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { WILDLIFE_SERVICES } from "@/lib/wildlife-data";
 import { BUSINESS } from "@/lib/constants";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Wildlife Removal | Cityview Pest Control",
-  description:
-    "Humane wildlife removal across the GTA — squirrels, raccoons, bats, skunks, birds, and opossums. Call or WhatsApp for a free quote.",
-};
+export const metadata = pageMetadata("Wildlife Removal | Cityview Pest Control", "Humane wildlife removal across the GTA — squirrels, raccoons, bats, skunks, birds, and opossums. Call or WhatsApp for a free quote.", "/services/wildlife-removal");
 
 export default function WildlifeOverview() {
   return (
@@ -44,7 +41,7 @@ export default function WildlifeOverview() {
                   </div>
                 ) : <div className="aspect-4/3 bg-ink/5 border border-line rounded-lg flex items-center justify-center">
                   <span className="font-mono text-xs text-slate uppercase tracking-widest">
-                    {animal.label} — image placeholder
+                    {animal.label}
                   </span>
                 </div>}
               </div>

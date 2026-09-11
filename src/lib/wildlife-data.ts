@@ -69,7 +69,7 @@ export const WILDLIFE_SERVICES: WildlifeContent[] = [
     image: { src: "/images/services/skunk.png", alt: "Adult skunks and young skunks outdoors near a structure" },
     tagline: "Odour-conscious removal from under decks and sheds.",
     summary:
-      "Skunks tend to den under decks, sheds, and porches. We remove them without triggering the spray you're trying to avoid.",
+      "Skunks tend to den under decks, sheds, and porches. Our careful, low-stress approach helps reduce the risk of spraying during removal.",
     details: [
       "Skunks are generally not aggressive, but they'll spray if they feel cornered — which is why removal method and timing matter more than with most wildlife.",
       "They typically den in dug-out spaces under decks, sheds, or porches, and can cause a persistent odour problem from scent marking near the den, even without spraying.",

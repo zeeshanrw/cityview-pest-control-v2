@@ -1,9 +1,12 @@
 export const BUSINESS = {
   name: "Cityview Pest Control",
+  email: "info@cityviewpestcontrol.ca",
   phone: "647-779-1770",
   phoneHref: "tel:+16477791770",
   whatsappHref: "https://wa.me/16477791770",
   whatsappNumber: "647-779-1770",
+  googleReviewsHref: "https://www.google.com/search?q=CityView+Pest+Control+Vaughan&stick=H4sIAAAAAAAA_-NgU1I1qLCwMEoysrQwNTRNMTMxNDK2MqgwTE4zMEwyMjRJTLU0MTNNXcQq65xZUhmWmVquEJBaXKLgnJ9XUpSfoxCWWJqekZgHAKmU-pZJAAAA",
+  googleRating: "5.0",
   serviceArea: "Greater Toronto Area",
 } as const;
 
