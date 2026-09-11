@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+header nav a[aria-current="page"],
+header nav button[data-active="true"] {
+  color: var(--color-signal);
+  background-color: color-mix(in srgb, var(--color-signal) 12%, var(--color-ink));
+  box-shadow: inset 3px 0 0 var(--color-signal);
+  font-weight: 600;
+}
+
 :root {
   /* Core palette -- "field dispatch" identity */
   --color-ink: #142138;       /* deep navy -- headers, primary text */

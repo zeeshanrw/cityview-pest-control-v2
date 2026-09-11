@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Inter, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Footer from "@/components/Footer";
 import CallbackWidget from "@/components/CallbackWidget";
 import "./globals.css";
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body">
         <Header />
+        <Breadcrumbs />
         <CallbackWidget />
         <main className="flex-1">{children}</main>
         <Footer />

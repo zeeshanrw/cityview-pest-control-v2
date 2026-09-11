@@ -1,6 +1,5 @@
-import Link from "next/link";
+import ServiceGrid from "@/components/ServiceGrid";
 import HomeHeroSlideshow from "@/components/HomeHeroSlideshow";
-import { HOMEPAGE_SERVICES } from "@/lib/constants";
 export default function Home() {
   return (
     <>
@@ -20,22 +19,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line rounded-lg overflow-hidden">
-            {HOMEPAGE_SERVICES.map((service, i) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group bg-paper hover:bg-ink p-6 md:p-8 transition-colors"
-              >
-                <span className="font-mono text-xs text-slate group-hover:text-signal">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="font-display font-semibold uppercase text-lg md:text-xl mt-3 group-hover:text-paper transition-colors">
-                  {service.label}
-                </p>
-              </Link>
-            ))}
-          </div>
+          <ServiceGrid />
         </div>
       </section>
 
